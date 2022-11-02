@@ -1,1 +1,2 @@
 First:  Yeni popcorn projesi Swiper hareket kodları 
+Push 2 : Aşağı düşen mısırları sayma kodları yazıldı
