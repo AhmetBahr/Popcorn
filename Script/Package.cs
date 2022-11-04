@@ -9,10 +9,7 @@ public class Package : MonoBehaviour
   
 
 
-    void Start()
-    {
-        
-    }
+  
 
     void Update()
     {
@@ -28,9 +25,9 @@ public class Package : MonoBehaviour
     public void fullPackage()
     {
 
-        transform.DOMove(new Vector3(30, -1.95f, -3.5f), 15);
+        transform.DOMove(new Vector3(30, -1.95f, -3.5f), 10);
 
-
+        OnDestroy();
     }
 
 
@@ -41,5 +38,10 @@ public class Package : MonoBehaviour
     }
 
 
+
+    private void OnDestroy()
+    {
+        Destroy(gameObject, 8);
+    }
 
 }

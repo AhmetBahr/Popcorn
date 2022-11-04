@@ -20,5 +20,15 @@ public class PopCorn : MonoBehaviour
         Referans_Kod1.scoreUp();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Dest")
+        {
+            Destroy(gameObject);
+        }
+
+
+    }
+
 
 }
