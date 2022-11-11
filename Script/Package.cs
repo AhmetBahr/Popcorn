@@ -6,42 +6,45 @@ using UnityEngine;
 public class Package : MonoBehaviour
 {
 
-  
-
-
-  
-
     void Update()
     {
-    
-        if (Input.GetKeyDown(KeyCode.A))
+    /*    if (Input.GetMouseButtonDown(0))
         {
-            fullPackage();
-        
+            Moveing();
+
         }
+    */
+    }
+
+ 
+
+    public void Moveing()
+    {
+
+        transform.DOMove(new Vector3(0, -2.75f, -7.15f), 4).OnComplete(() => StartCoroutine(wait2sec()));
 
     }
 
     public void fullPackage()
     {
+        transform.DOMove(new Vector3(11, -2.75f, -7.15f), 4).OnComplete(() => BackToPosition());
 
-        transform.DOMove(new Vector3(30, -1.95f, -3.5f), 10);
-
-        OnDestroy();
     }
 
 
-    public void Moveing()
+    private void BackToPosition()
     {
+        transform.position = new Vector3(-12, -2.75f, -7.15f);
 
-        transform.DOMove(new Vector3(0,-1.95f,-3.5f), 8);
+        GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, 0);
+
     }
 
-
-
-    private void OnDestroy()
+    IEnumerator wait2sec()
     {
-        Destroy(gameObject, 8);
+
+        yield return new WaitForSeconds(7f);
+        fullPackage();
     }
 
 }

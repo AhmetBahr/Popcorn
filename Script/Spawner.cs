@@ -35,7 +35,7 @@ public class Spawner : MonoBehaviour
     {
         Instantiate(package, spawnpoint.transform.position, Quaternion.identity);
 
-        Referans_Kod1 = GameObject.Find("Package(Clone)").GetComponent<Package>();
+        Referans_Kod1 = GameObject.Find("Popcorn Box Prefab(Clone)").GetComponent<Package>();
         Referans_Kod1.Moveing();
     }
 
